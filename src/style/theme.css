@@ -1,0 +1,11 @@
+body.light-theme {
+  --section-bg: var(--section-bg-light);
+  --box-bg: var(--box-bg-light);
+  --text-color: var(--text-light);
+}
+
+body.dark-theme {
+  --section-bg: var(--section-bg-dark);
+  --box-bg: var(--box-bg-dark);
+  --text-color: var(--text-dark);
+}

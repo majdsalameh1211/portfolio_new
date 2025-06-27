@@ -1,0 +1,14 @@
+/* Global Theme Styles (Add to App.css) */
+body.dark-theme {
+  background-color: #121212; /* Dark background */
+  color: white; /* Default text color for dark mode */
+}
+
+body.light-theme {
+  background-color: #ffffff; /* Light background */
+  color: black; /* Default text color for light mode */
+}
+
+.highlight {
+  color: #007BFF; /* Blue for highlighted text */
+}

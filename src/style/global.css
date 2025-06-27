@@ -1,0 +1,12 @@
+:root {
+    --header-bg: linear-gradient(90deg, #00274d, #004080);
+    --header-text: #ffffff;
+    --section-bg-light: #f8f9fa;
+    --section-bg-dark: #2a2a2a;
+    --box-bg-light: #ffffff;
+    --box-bg-dark: #333333;
+    --text-light: #333333;
+    --text-dark: #ffffff;
+    --link-hover: #0056b3;
+  }
+  

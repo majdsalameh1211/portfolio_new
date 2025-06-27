@@ -1,0 +1,31 @@
+.button {
+  background-color: var(--header-bg);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: var(--link-hover);
+}
+
+.card {
+  background-color: var(--box-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 🌟 Global Page Title Styling - Extra Bold */
+.page-title {
+  font-size: 4rem;  /* Even larger font size */
+  font-weight: 900;  /* Maximum boldness */
+  text-align: center;  /* Center alignment */
+  margin-bottom: 1.5rem;
+  color: var(--text-color); /* Adapts to light/dark mode */
+  text-transform: uppercase; /* Makes it stand out */
+  letter-spacing: 2px; /* Adds spacing for a strong impact */
+}

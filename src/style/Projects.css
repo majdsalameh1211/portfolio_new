@@ -1,0 +1,117 @@
+/* Projects Section */
+.projects {
+  margin-top: 100px;
+  padding: 2rem;
+  background-color: var(--section-bg);
+  text-align: center;
+}
+
+/* Slider Container */
+.projects-slider {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* Makes all slides the same height */
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+/* Keep consistent card size */
+.project-slide {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* Ensures all slides are of equal height */
+  text-align: left;
+}
+
+/* Project Cards - Ensure Equal Height */
+.project-card {
+  width: 90%;
+  max-width: 400px;
+  background-color: var(--box-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch; /* Make all cards fill the same height */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  min-height: 400px; /* Adjust for uniformity */
+}
+
+/* Ensure descriptions take up space evenly */
+.project-card p {
+  flex-grow: 1; /* Makes text expand evenly */
+  white-space: pre-line;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: left;
+  line-height: 1.5;
+}
+
+/* Ensures all buttons align at the bottom */
+.project-card .button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}
+
+/* Project Links */
+.project-card a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: var(--header-bg);
+  display: inline-block;
+  transition: background-color 0.3s ease-in-out, transform 0.3s;
+  text-align: center;
+  margin-top: auto;
+}
+
+.project-card a:hover {
+  background-color: var(--link-hover);
+  transform: scale(1.05);
+}
+
+/* Hover Effects */
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Project Titles */
+.project-card h3 {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .projects-slider {
+    max-width: 600px;
+  }
+
+  .project-card {
+    max-width: 90%;
+    margin: 0 auto;
+    min-height: auto; /* Adjusts height dynamically for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-slider {
+    max-width: 100%;
+  }
+
+  .project-card {
+    width: 100%;
+  }
+}
