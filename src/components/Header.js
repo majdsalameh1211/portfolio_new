@@ -19,18 +19,18 @@ const Header = () => {
       return newTheme;
     });
 
-    // Remove border from theme button after a short delay
+    // Remove border after a short delay
     setTimeout(() => {
       setActiveThemeButton(false);
     }, 2000);
   };
 
-  // Handle scroll event and detect the active section
+  // Handle scroll and set active section
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
-      const sections = ["about", "projects", "contact"];
+      const sections = ["about", "final-project", "projects", "contact"]; // ✅ Added final-project
       let currentSection = activeSection;
 
       sections.forEach((section) => {
@@ -76,7 +76,7 @@ const Header = () => {
             />
             <div className="header-text">
               <h3>Majd Salameh</h3>
-              <li>Software Engineering Student</li>
+              <li>Software Engineer</li>
             </div>
           </>
         )}
@@ -92,6 +92,18 @@ const Header = () => {
                 }}
               >
                 About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#final-project" 
+                className={activeSection === "final-project" ? "active" : ""}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick("final-project");
+                }}
+              >
+                Final Project
               </a>
             </li>
             <li>
@@ -120,7 +132,7 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        {/* Theme Toggle Button with Sun & Moon Icons */}
+        {/* Theme Toggle Button */}
         <button
           className={`theme-toggle ${activeThemeButton ? "active" : ""}`}
           onClick={toggleTheme}

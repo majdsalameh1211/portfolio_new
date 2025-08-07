@@ -5,48 +5,37 @@ import "slick-carousel/slick/slick-theme.css";
 import '../style/Projects.css';
 
 const Projects = () => {
-  const projects = [
-    {
-      title: "🤖💬 WhatsApp ChatBot",
-      description: 
-        "A smart WhatsApp chatbot powered by the Green API, designed to streamline " +
-        "client interactions and automate messaging workflows. It offers:\n\n" +
-        "✅ Automated responses to user queries\n" +
-        "✅ Dynamic conversation handling\n" +
-        "✅ JSON-based conversation storage\n" +
-        "✅ Export functionality to Google Docs or CRM systems\n" +
-        "✅ Seamless API integration for extended automation\n\n" +
-        "🔹 Technologies Used: Node.js, Express.js, Green API, JSON, Google Docs API",
-      link: "https://github.com/majdsalameh1211/WhatsApp-ChatBot-JS-and-GreenAPI-"
-    },
-    {
-      title: "🌿 GoNature – Park Management System",
-      description: 
-        "GoNature is an intelligent park management system designed for seamless visitor " +
-        "reservations and real-time park operations. Built with Java, JavaFX, and SQL, it " +
-        "optimizes park workflow with:\n\n" +
-        "✅ Multi-user authentication\n" +
-        "✅ Real-time reservation management\n" +
-        "✅ Waiting list system for full bookings\n" +
-        "✅ Automated SMS notifications for approvals\n" +
-        "✅ Data-driven reports for park usage and visitor trends 📊\n\n" +
-        "🔹 Technologies Used: Java, JavaFX, MySQL, JDBC",
-      link: "https://github.com/majdsalameh1211/GoNature"
-    },
-    
-    {
-      title: "🌐 Networking - Social Media Web App",
-      description: 
-        "Networking is a full-stack social media platform that enables users to:\n\n" +
-        "✅ Register, log in, and recover passwords\n" +
-        "✅ Create posts, like, and comment\n" +
-        "✅ Follow and interact with friends\n" +
-        "✅ Engage in real-time messaging with WebSockets\n\n" +
-        "🔹 Technologies Used: React.js, Tailwind CSS, Node.js, Express.js, MongoDB, WebSockets, JWT Authentication\n" +
-        "🔹 Deployment: Hosted on Vercel (Frontend & Backend), database managed with MongoDB Atlas",
-      link: "https://github.com/majdsalameh1211/Networking"
-    }
-  ];
+ const projects = [
+  {
+    title: "WhatsApp ChatBot",
+    description:
+      "A smart chatbot for WhatsApp using Green API to automate user communication. Features include dynamic responses, JSON-based conversation storage, export to Google Docs or CRM systems, and seamless API integration for automation workflows.\n\n" +
+      "Technologies Used: Node.js, Express.js, Green API, Google Docs API",
+    link: "https://github.com/majdsalameh1211/WhatsApp-ChatBot-JS-and-GreenAPI-"
+  },
+  {
+    title: "Android Development Projects (Flutter)",
+    description:
+      "A collection of mobile apps built with Flutter, focusing on design, user interaction, and backend integration. Projects include a kids book reader with age grouping, dark mode, and animation, and a Firebase demo app with phone authentication and modular navigation.\n\n" +
+      "Technologies Used: Flutter, Dart, Firebase, Material Design",
+    link: "https://github.com/majdsalameh1211/Android_Course/tree/main"
+  },
+  {
+    title: "GoNature – Park Management System",
+    description:
+      "A full-stack system for managing reservations, visitor access, and park operations. Key features include multi-user authentication, real-time booking and waiting lists, SMS alerts for approvals, and reports for monitoring park activity and traffic.\n\n" +
+      "Technologies Used: Java, JavaFX, MySQL, JDBC",
+    link: "https://github.com/majdsalameh1211/GoNature"
+  },
+  {
+    title: "Networking – Social Media Platform",
+    description:
+      "A complete social media web application with authentication, real-time messaging, and post interaction. Includes login, password recovery, content sharing, following system, WebSocket-based chat, and is deployed with cloud-based tools for scalability.\n\n" +
+      "Technologies Used: React, Tailwind, Node.js, Express, MongoDB, WebSockets, JWT",
+    link: "https://github.com/majdsalameh1211/Networking"
+  }
+];
+
 
   const sliderSettings = {
     dots: true,
@@ -70,7 +59,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="projects">
-      <h2 className="page-title">🚀 My Key Projects</h2>
+      <h2 className="page-title"> My Key Projects</h2>
 
       <Slider {...sliderSettings} className="projects-slider">
         {projects.map((project, index) => (

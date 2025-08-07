@@ -11,7 +11,7 @@ const Contact = () => {
       
       {/* 🎯 My Vision & Career Goals Section */}
       <div className="career-goals">
-        <h3>🎯 My Vision & Career Goals</h3>
+        <h3> My Vision & Career Goals</h3>
         <p>
           I’m eager to step into the <strong>tech industry</strong>, contribute to <strong>innovative projects</strong>,
           and work alongside <strong>skilled professionals</strong>. Whether it’s <strong>software development</strong>,
@@ -21,7 +21,7 @@ const Contact = () => {
 
       {/* 🔗 Contact & Resume Section */}
       <div className="contact-section">
-        <h2 className="page-title">🔗 Let’s Connect & Build Something Great!</h2>
+      <h2 className="page-title"> Let's Connect & Build Something Great!</h2>
 {/*
         <div className="resume-container">
           <button className="download-resume-btn" onClick={handleDownload}>
