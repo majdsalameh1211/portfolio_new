@@ -374,7 +374,20 @@ export default function Hero() {
           gap: 0,
         }}>
 
-
+          {/* Photo */}
+          <div style={{ marginBottom: 24 }}>
+            <div style={{
+              width: 120, height: 120,
+              borderRadius: '50%',
+              border: '2px solid var(--accent-border)',
+              background: 'var(--accent-light)',
+              overflow: 'hidden',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+            }}>
+              {/* Replace with: <img src="/photo.jpg" alt="Majd" style={{width:'100%',height:'100%',objectFit:'cover'}}/> */}
+              <span style={{ fontSize: 34, fontWeight: 700, color: 'var(--accent)', letterSpacing: '-0.03em' }}>MS</span>
+            </div>
+          </div>
 
           {/* Name + title */}
           <h1 style={{
@@ -408,7 +421,7 @@ export default function Hero() {
               View My Work
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
             </a>
-            <a href="/MajdSalameh_CV.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline">
+            <a href="/MajdSalamehCV.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline">
               Download CV
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
             </a>
