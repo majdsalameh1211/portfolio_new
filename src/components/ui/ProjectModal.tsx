@@ -69,7 +69,7 @@ export default function ProjectModal({ project, onClose }: { project: Project; o
             <p style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--accent)', marginBottom: 10 }}>
               Overview
             </p>
-            <p style={{ fontSize: 14, color: 'var(--text2)', lineHeight: 1.8 }}>{project.overview}</p>
+            <p style={{ fontSize: 14, color: 'var(--text2)', lineHeight: 1.8 }}>{project.shortDesc}</p>
           </div>
 
           {/* What I built */}
