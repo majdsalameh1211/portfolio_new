@@ -1,12 +1,10 @@
 'use client'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
+import Link from 'next/link'
 import { freelanceProjects } from '@/data/projects'
-import ProjectModal from '@/components/ui/ProjectModal'
-import type { Project } from '@/data/projects'
 
 export default function FreelanceWork() {
   const ref = useRef<HTMLDivElement>(null)
-  const [active, setActive] = useState<Project | null>(null)
 
   useEffect(() => {
     const el = ref.current
@@ -54,98 +52,100 @@ export default function FreelanceWork() {
           gridTemplateColumns: 'repeat(3, 1fr)',
           gap: 16,
         }} className="freelance-grid">
-          {freelanceProjects.map((p, idx) => (
-            <div
+          {freelanceProjects.map((p) => (
+            <Link
               key={p.slug}
-              className="about-card"
-              onClick={() => setActive(p)}
-              style={{
-                padding: '24px 26px',
-                cursor: 'pointer',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 0,
-                transition: 'transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease',
-              }}
-              onMouseEnter={e => {
-                const el = e.currentTarget as HTMLElement
-                el.style.transform = 'translateY(-4px)'
-                el.style.borderColor = 'rgba(88,166,255,0.35)'
-              }}
-              onMouseLeave={e => {
-                const el = e.currentTarget as HTMLElement
-                el.style.transform = 'translateY(0)'
-                el.style.borderColor = 'rgba(88,166,255,0.18)'
-              }}
+              href={`/projects/${p.slug}`}
+              style={{ textDecoration: 'none' }}
             >
-              {/* Top row — badge + type */}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 18 }}>
-                {p.status === 'live'
-                  ? <span className="badge-live">Live</span>
-                  : <span className="badge-complete">Delivered</span>
-                }
-                <span style={{
-                  fontSize: 10, color: 'var(--text3)',
-                  fontFamily: 'var(--font-jetbrains), monospace',
-                  padding: '3px 8px',
-                  border: '1px solid var(--border)',
-                  borderRadius: 6,
-                  background: 'rgba(88,166,255,0.05)',
-                }}>
-                  Client work
-                </span>
-              </div>
-
-              {/* Title + subtitle */}
-              <h3 style={{
-                fontSize: 17,
-                fontWeight: 700,
-                color: 'var(--text)',
-                letterSpacing: '-0.025em',
-                lineHeight: 1.25,
-                marginBottom: 6,
-              }}>{p.title}</h3>
-              {p.subtitle && (
-                <p style={{ fontSize: 12, color: 'var(--accent)', marginBottom: 14, fontWeight: 500 }}>{p.subtitle}</p>
-              )}
-
-              {/* Short desc */}
-              <p style={{ fontSize: 13, color: 'var(--text2)', lineHeight: 1.75, flex: 1, marginBottom: 18 }}>
-                {p.shortDesc}
-              </p>
-
-              {/* Stack pills */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 18 }}>
-                {p.stack.slice(0, 5).map(s => (
-                  <span key={s} className="stack-pill">{s}</span>
-                ))}
-                {p.stack.length > 5 && (
-                  <span className="stack-pill" style={{ color: 'var(--accent)', borderColor: 'var(--accent-border)', background: 'var(--accent-light)' }}>
-                    +{p.stack.length - 5}
+              <div
+                className="about-card"
+                style={{
+                  padding: '24px 26px',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 0,
+                  transition: 'transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease',
+                }}
+                onMouseEnter={e => {
+                  const el = e.currentTarget as HTMLElement
+                  el.style.transform = 'translateY(-4px)'
+                  el.style.borderColor = 'rgba(88,166,255,0.35)'
+                }}
+                onMouseLeave={e => {
+                  const el = e.currentTarget as HTMLElement
+                  el.style.transform = 'translateY(0)'
+                  el.style.borderColor = 'rgba(88,166,255,0.18)'
+                }}
+              >
+                {/* Top row — badge + type */}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 18 }}>
+                  {p.status === 'live'
+                    ? <span className="badge-live">Live</span>
+                    : <span className="badge-complete">Delivered</span>
+                  }
+                  <span style={{
+                    fontSize: 10, color: 'var(--text3)',
+                    fontFamily: 'var(--font-jetbrains), monospace',
+                    padding: '3px 8px',
+                    border: '1px solid var(--border)',
+                    borderRadius: 6,
+                    background: 'rgba(88,166,255,0.05)',
+                  }}>
+                    Client work
                   </span>
-                )}
-              </div>
+                </div>
 
-              {/* Footer */}
-              <div style={{
-                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                paddingTop: 14,
-                borderTop: '1px solid rgba(88,166,255,0.1)',
-              }}>
-                <span style={{ fontSize: 12, color: 'var(--accent)', fontWeight: 600 }}>
-                  View details
-                </span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2.5">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
+                {/* Title + subtitle */}
+                <h3 style={{
+                  fontSize: 17,
+                  fontWeight: 700,
+                  color: 'var(--text)',
+                  letterSpacing: '-0.025em',
+                  lineHeight: 1.25,
+                  marginBottom: 6,
+                }}>{p.title}</h3>
+                {p.subtitle && (
+                  <p style={{ fontSize: 12, color: 'var(--accent)', marginBottom: 14, fontWeight: 500 }}>{p.subtitle}</p>
+                )}
+
+                {/* Short desc */}
+                <p style={{ fontSize: 13, color: 'var(--text2)', lineHeight: 1.75, flex: 1, marginBottom: 18 }}>
+                  {p.shortDesc}
+                </p>
+
+                {/* Stack pills */}
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 18 }}>
+                  {p.stack.slice(0, 5).map(s => (
+                    <span key={s} className="stack-pill">{s}</span>
+                  ))}
+                  {p.stack.length > 5 && (
+                    <span className="stack-pill" style={{ color: 'var(--accent)', borderColor: 'var(--accent-border)', background: 'var(--accent-light)' }}>
+                      +{p.stack.length - 5}
+                    </span>
+                  )}
+                </div>
+
+                {/* Footer */}
+                <div style={{
+                  display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                  paddingTop: 14,
+                  borderTop: '1px solid rgba(88,166,255,0.1)',
+                }}>
+                  <span style={{ fontSize: 12, color: 'var(--accent)', fontWeight: 600 }}>
+                    View details
+                  </span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
       </div>
-
-      {active && <ProjectModal project={active} onClose={() => setActive(null)} />}
     </section>
   )
 }
